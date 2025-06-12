@@ -1,0 +1,74 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.descargar {
+  background-color: v.$grisClaro;
+  padding: v.$separacion 0;
+
+  &__grid {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4rem;
+
+    @include m.tablet {
+      @include m.grid(2, v.$separacion);
+      align-items: center;
+    }
+  }
+
+  &__imagen {
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+      transform: scale(1.03) rotate(1.5deg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+// Estilos complementarios (modifican el bloque .tiendas si lo tienes en otro archivo)
+.tiendas {
+  &__heading {
+    font-size: 2.8rem;
+    color: v.$negro;
+    margin-bottom: 2rem;
+  }
+
+  &__texto {
+    font-size: 1.6rem;
+    color: v.$secundario;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__enlace {
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__logo {
+    width: 160px;
+    height: auto;
+  }
+}

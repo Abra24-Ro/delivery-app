@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>App Delivery - RaroDev</title>
+  <meta name="description"
+    content="Tu cafetería favorita ahora en tu bolsillo. Ordena fácil y rápido con nuestra App Delivery. Diseño moderno con BEM, SASS y Gulp.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/build/img/logo.svg" type="image/png" />
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/build/css/app.css" />
+
+  <!-- Open Graph para Facebook, WhatsApp -->
+  <meta property="og:title" content="App Delivery - RaroDev" />
+  <meta property="og:description"
+    content="Ordena desde tu cafetería favorita con un diseño web moderno, rápido y responsive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tusitio.netlify.app/" />
+  <meta property="og:image" content="https://tusitio.netlify.app/build/img/logo.svg" />
+  <meta property="og:site_name" content="App Delivery" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="App Delivery - RaroDev" />
+  <meta name="twitter:description"
+    content="Ordena desde tu cafetería favorita con un diseño web moderno, rápido y responsive." />
+  <meta name="twitter:image" content="https://tusitio.netlify.app/build/img/og-image.jpg" />
+  <meta name="twitter:site" content="@tu_usuario" />
+</head>
+
+
+<body>
+  <header class="header contenedor">
+    <div class="header__logo">
+      <img src="build/img/logo.svg" alt="Logo de la empresa" />
+    </div>
+    <nav class="navegacion">
+      <a href="#" class="navegacion__link">Iniciar Sesión</a>
+      <a href="#" class="navegacion__link">Crear Cuenta</a>
+      <a href="#" class="navegacion__link navegacion__link--registrar">Registrar Empresa</a>
+    </nav>
+  </header>
+
+  <section class="contenedor formulario">
+    <div class="formulario__grid">
+      <div class="formulario__contenido">
+        <h2 class="formulario__heading">
+          Descubre y ordena desde tu restaurante favorito
+        </h2>
+
+        <form action="" class="formulario__buscar">
+          <div class="formulario__campo">
+            <label for="restaurant" class="formulario__label">Restaurante</label>
+            <input type="text" id="restaurant" class="formulario__input" placeholder="Ej. Chifa Royal, Norky's" />
+          </div>
+          <div class="formulario__campo">
+            <label for="platillo" class="formulario__label">Plato</label>
+            <input type="text" id="platillo" class="formulario__input"
+              placeholder="Ej. Pollo agridulce, Arroz chaufa, Wantán frito" />
+          </div>
+          <input type="submit" class="formulario__submit" value="Buscar comida" />
+        </form>
+      </div>
+      <div class="formulario__imagen-contenedor">
+        <img class="formulario__imagen" src="build/img/dibujo_repartidor.svg" alt="Imagen de repartidor" />
+      </div>
+    </div>
+  </section>
+
+  <section class="pasos">
+    <img src="build/img/wave.svg" alt="Olas decorativas" class="pasos_wave" />
+    <div class="pasos__contenido">
+      <h2 class="pasos__heading">
+        ¿Cómo funciona?
+        <span class="pasos__heading--descripcion">tan facil como 1,2,3</span>
+      </h2>
+      <div class="pasos__grid contenedor">
+        <div class="pasos__paso">
+          <img src="build/img/paso_1.png" alt=" Paso 1" class="pasos__imagen" />
+        </div>
+        <div class="pasos__paso">
+          <img src="build/img/paso_2.png" alt=" Paso 2" class="pasos__imagen" />
+        </div>
+        <div class="pasos__paso">
+          <img src="build/img/paso_3.png" alt=" Paso 3" class="pasos__imagen" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contenedor testimoniales">
+    <h2 class="testimoniales__heading">¿Qué dicen nuestros clientes?</h2>
+    <div class="testimoniales__grid">
+      <article class="testimonial">
+        <figure class="testimonial__header">
+          <img class="testimonial__imagen" src="build/img/testimonial1.jpg" alt="Foto de Robinson Rodríguez" />
+          <figcaption class="testimonial__informacion">
+            <h3 class="testimonial__autor">Robinson Rodríguez</h3>
+            <img class="testimonial__estrellas" src="build/img/estrellas.png" alt="5 estrellas" />
+          </figcaption>
+        </figure>
+        <blockquote class="testimonial__texto">
+          Excelente servicio, la comida llegó rápido y estaba deliciosa.
+          ¡Recomendado!
+        </blockquote>
+      </article>
+
+      <article class="testimonial">
+        <figure class="testimonial__header">
+          <img class="testimonial__imagen" src="build/img/testimonial5.jpg" alt="Foto de María García" />
+          <figcaption class="testimonial__informacion">
+            <h3 class="testimonial__autor">María García</h3>
+            <img class="testimonial__estrellas" src="build/img/estrellas.png" alt="5 estrellas" />
+          </figcaption>
+        </figure>
+        <blockquote class="testimonial__texto">
+          La mejor experiencia de entrega a domicilio que he tenido. ¡Gracias
+          por el excelente servicio!
+        </blockquote>
+      </article>
+
+      <article class="testimonial">
+        <figure class="testimonial__header">
+          <img class="testimonial__imagen" src="build/img/testimonial4.jpg" alt="Foto de Rocio Ised" />
+          <figcaption class="testimonial__informacion">
+            <h3 class="testimonial__autor">Rocio Ised</h3>
+            <img class="testimonial__estrellas" src="build/img/estrellas.png" alt="5 estrellas" />
+          </figcaption>
+        </figure>
+        <blockquote class="testimonial__texto">
+          El servicio fue rápido y la comida llegó caliente. Definitivamente
+          volveré a usar esta app.
+        </blockquote>
+      </article>
+
+      <article class="testimonial">
+        <figure class="testimonial__header">
+          <img class="testimonial__imagen" src="build/img/testimonial2.jpg" alt="Foto de Elank Muska" />
+          <figcaption class="testimonial__informacion">
+            <h3 class="testimonial__autor">Elank Muska</h3>
+            <img class="testimonial__estrellas" src="build/img/estrellas.png" alt="5 estrellas" />
+          </figcaption>
+        </figure>
+        <blockquote class="testimonial__texto">
+          Me encanta la variedad de restaurantes disponibles. Siempre
+          encuentro algo delicioso para pedir.
+        </blockquote>
+      </article>
+
+      <article class="testimonial">
+        <figure class="testimonial__header">
+          <img class="testimonial__imagen" src="build/img/testimonial3.jpg" alt="Foto de Donald Trump" />
+          <figcaption class="testimonial__informacion">
+            <h3 class="testimonial__autor">Donald Trump</h3>
+            <img class="testimonial__estrellas" src="build/img/estrellas.png" alt="5 estrellas" />
+          </figcaption>
+        </figure>
+        <blockquote class="testimonial__texto">
+          La verdad es que estoy muy satisfecho con el servicio. La comida
+          llegó a tiempo y estaba exquisita. ¡Recomiendo esta app a todos!
+        </blockquote>
+      </article>
+    </div>
+  </section>
+
+  <main class="favoritos">
+    <h2 class="favoritos__heading">Restaurantes favoritos</h2>
+
+    <div class="favoritos__grid contenedor">
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Green Bites" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Green Bites</h3>
+            <p class="favorito__descripcion">
+              Frescura y sabor en cada bocado. Ensaladas gourmet para todos
+              los gustos.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Chifa Royal" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Chifa Royal</h3>
+            <p class="favorito__descripcion">
+              Sabor oriental con tradición. Platos chinos con el auténtico
+              toque casero.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Fusión Limeña" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Fusión Limeña</h3>
+            <p class="favorito__descripcion">
+              Comida peruana reinventada con un toque moderno y mucha pasión.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de La Parrilla de Pepe" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">La Parrilla de Pepe</h3>
+            <p class="favorito__descripcion">
+              Carnes al carbón con ese sabor que solo una buena parrilla te
+              puede dar.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Sazón Marina" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Sazón Marina</h3>
+            <p class="favorito__descripcion">
+              Del mar a tu paladar. Ceviches, arroces y más con el mejor sabor
+              marino.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Urban Burger" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Urban Burger</h3>
+            <p class="favorito__descripcion">
+              Hamburguesas artesanales con ingredientes de primera y sabor
+              urbano.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de La Trattoria" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">La Trattoria</h3>
+            <p class="favorito__descripcion">
+              Pasta, pizzas y pasión italiana en cada plato. ¡Una experiencia
+              auténtica!
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de El Rincón Veggie" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">El Rincón Veggie</h3>
+            <p class="favorito__descripcion">
+              Opciones saludables, deliciosas y 100% plant-based. ¡Disfruta
+              sin culpas!
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Don Taku" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Don Taku</h3>
+            <p class="favorito__descripcion">
+              Sabores del Japón con una fusión nikkei que sorprende en cada
+              plato.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorito">
+        <div class="favorito__grid">
+          <div class="favorito__imagen">
+            <img src="build/img/logo_ensaladas.png" alt="Logo de Café Aroma" class="favorito__img" />
+          </div>
+          <div class="favorito__contenido">
+            <img src="build/img/estrellas.png" alt="5 estrellas" class="favorito__estrellas" />
+            <h3 class="favorito__nombre">Café Aroma</h3>
+            <p class="favorito__descripcion">
+              Café de especialidad y postres artesanales en un ambiente
+              acogedor.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  <section class="repartidores">
+    <h2 class="repartidores__heading">Gana dinero con AppComida</h2>
+
+    <div class="repartidores__grid contenedor">
+      <div class="repartidores__imagen">
+        <img src="build/img/repartidor.jpg" alt="Repartidor de AppComida" />
+      </div>
+
+      <div class="repartidores__contenido">
+        <h3 class="repartidores__titulo">Sé parte de nuestro equipo</h3>
+        <p class="repartidores__texto">
+          Conviértete en repartidor de AppComida y aprovecha una forma
+          flexible y rentable de generar ingresos. Tú decides tu horario y
+          nosotros te damos las herramientas para crecer.
+        </p>
+        <p class="repartidores__texto">
+          Únete a una comunidad activa, en constante crecimiento, y comienza a
+          ganar dinero desde el primer día.
+        </p>
+        <a href="#" class="repartidores__link">Postula como repartidor</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="descargar">
+    <div class="descargar__grid contenedor">
+
+      <div class="descargar__imagen">
+        <img src="build/img/app.png" alt="Aplicación AppComida en un teléfono móvil" />
+      </div>
+
+      <div class="tiendas">
+        <h3 class="tiendas__heading">Descarga AppComida en tu celular</h3>
+        <p class="tiendas__texto">
+          Pide tus platos favoritos con solo unos clics. Nuestra app está disponible en Google Play y App Store para que
+          disfrutes de una experiencia rápida, fácil y segura.
+        </p>
+
+        <div class="tiendas__grid">
+          <a href="#" class="tiendas__enlace" aria-label="Descargar AppComida en App Store">
+            <img src="build/img/tienda-apple.svg" alt="Descargar en App Store" class="tiendas__logo" />
+          </a>
+          <a href="#" class="tiendas__enlace" aria-label="Descargar AppComida en Google Play">
+            <img src="build/img/tienda-android.svg" alt="Descargar en Google Play" class="tiendas__logo" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer__grid contenedor">
+
+      <!-- Nosotros -->
+      <div class="footer__widget">
+        <h3 class="footer__heading">Nosotros</h3>
+        <p class="footer__texto">
+          En AppComida conectamos a los amantes de la buena comida con sus restaurantes favoritos, ofreciendo entregas
+          rápidas, seguras y con la mejor experiencia.
+        </p>
+      </div>
+
+      <!-- Navegación -->
+      <div class="footer__widget">
+        <h3 class="footer__heading">Navegación</h3>
+        <nav class="footer__nav">
+          <a href="#" class="footer__link">Inicio</a>
+          <a href="#" class="footer__link">Sobre Nosotros</a>
+          <a href="#" class="footer__link">Repartidores</a>
+          <a href="#" class="footer__link">Restaurantes</a>
+          <a href="#" class="footer__link">Descargar App</a>
+          <a href="#" class="footer__link">Contacto</a>
+        </nav>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer__widget">
+        <h3 class="footer__heading">Contacto</h3>
+        <p class="footer__texto">
+          📍 Av. Principal 123, Lima, Perú<br />
+          📞 +51 999 999 999<br />
+          ✉️ contacto@appcomida.com
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Derechos y Créditos -->
+    <div class="footer__copyright">
+      <p>&copy; 2025 AppComida. Todos los derechos reservados.</p>
+      <div class="footer__autor">
+        <p>
+          Diseñado por <a href="https://github.com/Abra24-Ro" target="_blank" rel="noopener noreferrer">RaroDev</a>
+        </p>
+        <div class="footer__redes">
+          <a href="https://github.com/Abra24-Ro" target="_blank" rel="noopener noreferrer">
+            <img src="build/img/github.svg" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/robinson-ojeda-9273a4346/" target="_blank" rel="noopener noreferrer">
+            <img src="build/img/linkedin.svg" alt="LinkedIn">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

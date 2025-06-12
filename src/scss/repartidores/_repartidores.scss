@@ -1,0 +1,58 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.repartidores {
+  padding: v.$separacion;
+  background-color: v.$grisClaro; // Añade contraste al fondo (opcional)
+
+  &__heading {
+    text-align: center;
+    color: v.$secundario;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include m.tablet {
+      @include m.grid(2, v.$separacion);
+      align-items: center;
+    }
+  }
+
+  &__imagen {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__titulo {
+    font-size: 2.5rem;
+    color: v.$negro;
+    margin: 0;
+  }
+
+  &__texto {
+    line-height: 1.6;
+    font-size: 1.6rem;
+    color: v.$secundario;
+    margin: 0
+  }
+
+  &__link {
+    @include m.boton(v.$primario, v.$blanco);
+  }
+}
