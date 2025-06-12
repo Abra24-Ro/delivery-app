@@ -1,65 +1,3 @@
-// const { src, dest, watch, series } = require('gulp');
-
-// // CSS y SASS
-// const sass = require('gulp-sass')(require('sass'));
-// const postcss = require('gulp-postcss');
-// const autoprefixer = require('autoprefixer');
-// const sourcemaps = require('gulp-sourcemaps');
-// const cssnano = require('cssnano');
-
-// // Imagenes
-// const imagemin = require('gulp-imagemin');
-// const webp = require('gulp-webp');
-// const avif = require('gulp-avif');
-
-// function css( done ) {
-//     src('src/scss/app.scss')
-//         .pipe( sourcemaps.init() )
-//         .pipe( sass() )
-//         .pipe( postcss([ autoprefixer(), cssnano() ]) )
-//         .pipe( sourcemaps.write('.'))
-//         .pipe( dest('build/css') )
-
-//     done();
-// }
-
-// function imagenes() {
-//     return src('src/img/**/*')
-//         .pipe( imagemin({ optimizationLevel: 3 }) )
-//         .pipe( dest('build/img') )
-// }
-
-// function versionWebp() {
-//     const opciones = {
-//         quality: 50
-//     }
-//     return src('src/img/**/*.{png,jpg}')
-//         .pipe( webp( opciones ) )
-//         .pipe( dest('build/img') )
-// }
-// function versionAvif() {
-//     const opciones = {
-//         quality: 50
-//     }
-//     return src('src/img/**/*.{png,jpg}')
-//         .pipe( avif( opciones ) )
-//         .pipe( dest('build/img'))
-// }
-
-// function dev() {
-//     watch( 'src/scss/**/*.scss', css );
-//     watch( 'src/img/**/*', imagenes );
-// }
-
-
-// exports.css = css;
-// exports.dev = dev;
-// exports.imagenes = imagenes;
-// exports.versionWebp = versionWebp;
-// exports.versionAvif = versionAvif;
-// exports.default = series( imagenes, versionWebp, versionAvif, css, dev  );
-
-
 import gulp from 'gulp';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -78,6 +16,7 @@ const browserSync = browserSyncLib.create();
 const sass = gulpSass(dartSass);
 const { src, dest, watch, series } = gulp;
 
+// Tarea: Compilar SASS, aplicar PostCSS (autoprefixer + minificar)
 export function css(done) {
     src('src/scss/app.scss')
         .pipe(sourcemaps.init())
@@ -89,12 +28,14 @@ export function css(done) {
     done();
 }
 
+// Tarea: Optimizar imágenes
 export function imagenes() {
     return src('src/img/**/*')
         .pipe(imagemin({ optimizationLevel: 3 }))
         .pipe(dest('build/img'));
 }
 
+// Tarea: Convertir imágenes a WebP
 export function versionWebp() {
     const opciones = { quality: 50 };
     return src('src/img/**/*.{png,jpg}')
@@ -102,6 +43,7 @@ export function versionWebp() {
         .pipe(dest('build/img'));
 }
 
+// Tarea: Convertir imágenes a AVIF
 export function versionAvif() {
     const opciones = { quality: 50 };
     return src('src/img/**/*.{png,jpg}')
@@ -109,6 +51,7 @@ export function versionAvif() {
         .pipe(dest('build/img'));
 }
 
+// Tarea: Servidor de desarrollo con BrowserSync
 export function servidor(done) {
     browserSync.init({
         server: {
@@ -120,6 +63,7 @@ export function servidor(done) {
     done();
 }
 
+// Tarea: Dev - observadores en SCSS, imágenes y HTML
 export function dev() {
     watch('src/scss/**/*.scss', css);
     watch('src/img/**/*', series(imagenes, versionWebp, versionAvif)).on('change', browserSync.reload);
@@ -127,5 +71,6 @@ export function dev() {
     watch('./build/js/**/*.js').on('change', browserSync.reload);
 }
 
-// Export por defecto
-export const build = series(imagenes, versionWebp, versionAvif, css);
+// Exportaciones para CLI
+export const build = series(imagenes, versionWebp, versionAvif, css); // 👉 para producción
+export default series(imagenes, versionWebp, versionAvif, css, servidor, dev); // 👉 para desarrollo
