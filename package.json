@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "gulp",              
-    "build": "gulp build"      
+    "dev": "gulp",
+    "build": "gulp build"
   },
   "author": "RaroDev",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "browser-sync": "^3.0.4",
     "cssnano": "^5.0.7",
     "gulp": "^4.0.2",
-    "gulp-avif": "^1.0.1",
+    "gulp-avif": "^1.1.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^5.0.0",

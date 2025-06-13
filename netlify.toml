@@ -6,8 +6,8 @@
   publish = "build"
 
 [build.environment]
-  # Versión de Node.js
-  NODE_VERSION = "18"
+  # Versión de Node.js más reciente
+  NODE_VERSION = "20"
 
 # Configuración para archivos estáticos
 [[headers]]

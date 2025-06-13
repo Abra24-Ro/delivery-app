@@ -55,11 +55,14 @@ export function versionWebp() {
         .pipe(dest('build/img'));
 }
 
-// Tarea: Convertir imágenes a AVIF
+// Tarea: Convertir imágenes a AVIF (con manejo de errores)
 export function versionAvif() {
     const opciones = { quality: 50 };
     return src('src/img/**/*.{png,jpg}')
-        .pipe(avif(opciones))
+        .pipe(avif(opciones).on('error', function(err) {
+            console.log('AVIF conversion failed:', err.message);
+            this.emit('end');
+        }))
         .pipe(dest('build/img'));
 }
 
@@ -84,5 +87,5 @@ export function dev() {
 }
 
 // Exportaciones para CLI
-export const build = series(html, js, imagenes, versionWebp, versionAvif, css); 
-export default series(imagenes, versionWebp, versionAvif, css, servidor, dev);
+export const build = series(html, js, imagenes, versionWebp, versionAvif, css); // 👉 para producción
+export default series(imagenes, versionWebp, versionAvif, css, servidor, dev); // 👉 para desarrollo
