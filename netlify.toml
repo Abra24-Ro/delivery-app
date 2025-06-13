@@ -1,0 +1,22 @@
+[build]
+  # Comando para generar los archivos de producción
+  command = "npm run build"
+  
+  # Directorio que contiene los archivos finales para publicar
+  publish = "build"
+
+[build.environment]
+  # Versión de Node.js
+  NODE_VERSION = "18"
+
+# Configuración para archivos estáticos
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Para archivos HTML
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

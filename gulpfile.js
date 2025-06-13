@@ -28,6 +28,18 @@ export function css(done) {
     done();
 }
 
+// Tarea: Copiar archivos HTML a build
+export function html() {
+    return src('./*.html')
+        .pipe(dest('build/'));
+}
+
+// Tarea: Copiar archivos JS si existen
+export function js() {
+    return src('src/js/**/*')
+        .pipe(dest('build/js'));
+}
+
 // Tarea: Optimizar imágenes
 export function imagenes() {
     return src('src/img/**/*')
@@ -72,5 +84,5 @@ export function dev() {
 }
 
 // Exportaciones para CLI
-export const build = series(imagenes, versionWebp, versionAvif, css); // 👉 para producción
-export default series(imagenes, versionWebp, versionAvif, css, servidor, dev); // 👉 para desarrollo
+export const build = series(html, js, imagenes, versionWebp, versionAvif, css); 
+export default series(imagenes, versionWebp, versionAvif, css, servidor, dev);
